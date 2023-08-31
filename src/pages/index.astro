@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import {count} from "../count";
+---
+<Layout title="Some Sample App">
+  <button hx-post="/partials/count" hx-swap="innerHTML">
+    {count()}
+  </button>
+  <div hx-boost="true">
+    <a href="/thing">Thing</a>
+  </div>
+
+</Layout>
+
+
+<style>
+  body {
+    font-size: 16px;
+  }
+  * {
+    color: white;
+  }
+  button {
+    background: grey;
+    padding: 0.5rem;
+  }
+</style>
+
